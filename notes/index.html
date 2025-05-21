@@ -8,11 +8,7 @@
       (function () {
         try {
           var stored = localStorage.getItem("theme");
-          var theme =
-            stored ||
-            (window.matchMedia("(prefers-color-scheme: dark)").matches
-              ? "dark"
-              : "light");
+          var theme = stored || "light";
           document.documentElement.setAttribute("data-theme", theme);
         } catch (e) {}
       })();
@@ -63,10 +59,18 @@
               </svg>
             </a>
             <div class="nav-emails">
-              <a class="nav-email" href="mailto:suyeonhan21@gmail.com"
+              <a
+                class="nav-email"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=suyeonhan21@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 >suyeonhan21@gmail.com</a
               >
-              <a class="nav-email" href="mailto:han00400@umn.edu"
+              <a
+                class="nav-email"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=han00400@umn.edu"
+                target="_blank"
+                rel="noopener noreferrer"
                 >han00400@umn.edu</a
               >
             </div>
@@ -94,18 +98,27 @@
         />
       </div>
 
-      <!-- TODO: each post is its own HTML file in this /notes folder.
-       To add a new post: duplicate template-post.html, edit its
-       title/date/content, then add a matching <div class="post-item">
-       row here, at the top of the list. 
+      <!-- 
        &copy; 2026 Su Yeon Han
        
        -->
 
       <div class="post-list">
         <div class="post-item">
-          <a href="template-post.html">Starting this site</a>
-          <span class="post-date">starting soon</span>
+          <a
+            href="https://responsible-elf-6da.notion.site/Attention-is-All-You-Need-3dd4e5d75c4180cf86fdcbf1f557973c"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Attention is All You Need</a
+          >
+        </div>
+        <div class="post-item">
+          <a href="parametric.html"> Paremetric models</a>
+          <span class="post-date"></span>
+        </div>
+        <div class="post-item">
+          <a href="research_agent.html">Reasoning + Search </a>
+          <span class="post-date"></span>
         </div>
       </div>
 

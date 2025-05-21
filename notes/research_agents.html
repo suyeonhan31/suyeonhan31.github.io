@@ -8,11 +8,7 @@
       (function () {
         try {
           var stored = localStorage.getItem("theme");
-          var theme =
-            stored ||
-            (window.matchMedia("(prefers-color-scheme: dark)").matches
-              ? "dark"
-              : "light");
+          var theme = stored || "light";
           document.documentElement.setAttribute("data-theme", theme);
         } catch (e) {}
       })();
@@ -63,10 +59,18 @@
               </svg>
             </a>
             <div class="nav-emails">
-              <a class="nav-email" href="mailto:suyeonhan21@gmail.com"
+              <a
+                class="nav-email"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=suyeonhan21@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 >suyeonhan21@gmail.com</a
               >
-              <a class="nav-email" href="mailto:han00400@umn.edu"
+              <a
+                class="nav-email"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=han00400@umn.edu"
+                target="_blank"
+                rel="noopener noreferrer"
                 >han00400@umn.edu</a
               >
             </div>
@@ -76,11 +80,6 @@
       </nav>
 
       <!--
-    TODO: THIS FILE IS A TEMPLATE.
-    To write a new post:
-      1. Copy this file to a new name, e.g. notes/my-post-slug.html
-      2. Edit the <title>, the h1, the .post-meta date, and the body text.
-      3. Add a <div class="post-item"> link to it at the top of notes/index.html.
   -->
 
       <article class="post">
