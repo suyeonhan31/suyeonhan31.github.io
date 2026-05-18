@@ -1,0 +1,426 @@
+/* ---------------------------------------------------
+   Su Yeon Han — personal site
+   Minimalist, text-first, light theme with dark toggle
+--------------------------------------------------- */
+
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap");
+
+:root {
+  --bg: #fdfdfc;
+  --bg-elevated: #f5f4f2;
+  --text: #1a1a19;
+  --text-muted: #6b6a66;
+  --border: #e5e3df;
+  --accent: #1a1a19;
+  --link: #1a1a19;
+  --link-underline: #c9c7c1;
+
+  --font-serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-sans: "IBM Plex Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+
+  --content-width: 680px;
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.75rem;
+  --space-4: 3rem;
+  --space-5: 5rem;
+}
+
+[data-theme="dark"] {
+  --bg: #111110;
+  --bg-elevated: #1a1a19;
+  --text: #e9e8e4;
+  --text-muted: #8a8985;
+  --border: #2b2b29;
+  --accent: #e9e8e4;
+  --link: #e9e8e4;
+  --link-underline: #46453f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-serif);
+  font-size: 18px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.wrap {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-2) var(--space-5);
+}
+
+/* ---------- Nav ---------- */
+
+nav.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.site-nav .links {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.site-nav .links a {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+.site-nav .links a:hover,
+.site-nav .links a.active {
+  color: var(--text);
+}
+
+.nav-end {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.85rem;
+  margin-left: auto;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.65rem;
+}
+
+.nav-emails {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.15rem;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  color: var(--text-muted);
+  line-height: 0;
+}
+
+.social-icons a:hover {
+  color: var(--text);
+}
+
+.social-icons svg {
+  width: 17px;
+  height: 17px;
+  display: block;
+}
+
+.social-icons .nav-email {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  line-height: 1.25;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.theme-toggle {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  border-radius: 6px;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.theme-toggle:hover {
+  color: var(--text);
+  border-color: var(--text-muted);
+}
+
+/* ---------- Header / hero ---------- */
+
+header.hero {
+  margin-bottom: var(--space-5);
+}
+
+header.hero h1 {
+  font-size: 1.7rem;
+  margin: 0 0 0.35rem;
+  font-weight: 600;
+}
+
+header.hero .tagline {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0 0 var(--space-3);
+}
+
+header.hero p.bio {
+  margin: 0 0 var(--space-3);
+  max-width: 58ch;
+}
+
+
+/* ---------- Section headings ---------- */
+
+section + section {
+  margin-top: var(--space-5);
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text);
+  margin: 0 0 var(--space-3);
+}
+
+.section-link {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.section-link:hover {
+  color: var(--text);
+}
+
+/* ---------- Page title (interior pages) ---------- */
+
+.page-title {
+  margin-bottom: var(--space-4);
+}
+
+.page-title:has(+ .notes-photos) {
+  margin-bottom: var(--space-2);
+}
+
+.page-title h1 {
+  font-size: 1.4rem;
+  margin: 0 0 0.35rem;
+  font-weight: 600;
+}
+
+.page-title p {
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ---------- Entry list (experience / projects) ---------- */
+
+.entry-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.entry {
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--border);
+}
+
+.entry:last-child {
+  border-bottom: none;
+}
+
+.entry-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  margin-bottom: 0.25rem;
+}
+
+.entry-title {
+  font-weight: 600;
+  font-size: 1.02rem;
+}
+
+.entry-title a {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--link-underline);
+}
+
+.entry-title a:hover {
+  border-bottom-color: var(--text);
+}
+
+.entry-meta {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.entry-org {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  margin: 0 0 0.5rem;
+}
+
+.entry-desc {
+  margin: 0 0 0.6rem;
+  max-width: 60ch;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tags span {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.15rem 0.45rem;
+}
+
+.placeholder-note {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  background: var(--bg-elevated);
+  border: 1px dashed var(--border);
+  border-radius: 6px;
+  padding: 0.6rem 0.8rem;
+  margin-bottom: var(--space-3);
+}
+
+/* ---------- Notes ---------- */
+
+.notes-photos {
+  display: grid;
+  /* Column widths match each photo's aspect ratio so both share one height. */
+  grid-template-columns: 0.75fr 1.766fr;
+  gap: 0.5rem;
+  margin: 0 0 var(--space-4);
+  align-items: start;
+}
+
+.notes-photos img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.post-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.post-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.post-item a {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--link-underline);
+}
+
+.post-item a:hover {
+  border-bottom-color: var(--text);
+}
+
+.post-date {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+article.post h1 {
+  font-size: 1.5rem;
+  margin: 0 0 0.35rem;
+}
+
+article.post .post-meta {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: var(--space-4);
+}
+
+article.post p {
+  max-width: 65ch;
+}
+
+/* ---------- Footer ---------- */
+
+footer.site-footer {
+  margin-top: var(--space-5);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--border);
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 480px) {
+  body {
+    font-size: 16px;
+  }
+  .wrap {
+    padding: var(--space-3) var(--space-2) var(--space-4);
+  }
+  header.hero {
+    margin-bottom: var(--space-4);
+  }
+  .entry-head {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+  nav.site-nav {
+    flex-wrap: wrap;
+    row-gap: var(--space-2);
+  }
+  .site-nav .links {
+    order: 2;
+    width: 100%;
+    gap: var(--space-2);
+  }
+  .nav-end {
+    order: 1;
+    width: 100%;
+  }
+  .social-icons .nav-email {
+    font-size: 0.68rem;
+  }
+}
